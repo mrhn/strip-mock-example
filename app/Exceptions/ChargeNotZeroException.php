@@ -4,12 +4,14 @@
 namespace App\Exceptions;
 
 
+use Illuminate\Http\Response;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Throwable;
 
-class ChargeNotZeroException extends \Exception
+class ChargeNotZeroException extends HttpException
 {
-    public function __construct($message = "Charges can not be zero.", $code = 0, Throwable $previous = null)
+    public function __construct()
     {
-        parent::__construct($message, $code, $previous);
+        parent::__construct(Response::HTTP_UNPROCESSABLE_ENTITY, 'Charges can not be zero.');
     }
 }

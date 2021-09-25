@@ -19,6 +19,7 @@ class Charge extends Model
         'amount',
         'currency',
         'type',
+        'stripe_id',
     ];
 
     public function getAmountAttribute(): float

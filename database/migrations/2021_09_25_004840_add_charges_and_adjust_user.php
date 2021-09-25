@@ -23,6 +23,7 @@ class AddChargesAndAdjustUser extends Migration
             $table->integer('amount');
             $table->string('currency');
             $table->string('type');
+            $table->string('stripe_id')->nullable();
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
